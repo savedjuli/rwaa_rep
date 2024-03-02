@@ -1,0 +1,223 @@
+\documentclass[a4paper]{memoir}
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage{appendix}
+\usepackage[a4paper,top=2.2cm,bottom=2.2cm,left=2.2cm,right=2.2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage[figuresleft]{rotating}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{csquotes}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{appendix}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\addto\extrasenglish{
+    \def\chapterautorefname{Chapter}
+    \def\sectionautorefname{Section}
+    \def\subsectionautorefname{Subsection}
+    \def\subsubsectionautorefname{Subsubsection}
+}
+\usepackage{listings}
+\usepackage{xcolor} % for custom colours
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=10pt,
+    breaklines=true,
+    frame=single,
+    captionpos=b
+}
+
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[official]{eurosym}
+\usepackage{adjustbox}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage{atbegshi}
+\usepackage{tikz}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\let\Square\relax
+\usepackage{bbding}
+\usepackage{tocvsec2}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{caption}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{deepskyblue}{rgb}{0.0, 0.75, 1.0}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{deepskyblue},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage[style=ieee, citestyle=numeric]{biblatex}
+\addbibresource{Bibliography.bib}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{
+      \printfield{labelprefix}
+      \printfield{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}
+      \setlength{\leftmargin}{\labelwidth}
+      \setlength{\labelsep}{\biblabelsep}
+      \addtolength{\leftmargin}{\labelsep}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}}
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+\usepackage{xcolor,fix-cm}
+\definecolor{numbercolor}{rgb}{0.0, 0.75, 1.0}
+\newif\ifchapternonum
+\makechapterstyle{jenor}{
+\setlength{\beforechapskip}{0cm}
+\setlength{\afterchapskip}{0.5cm}
+\renewcommand\printchaptername{}
+\renewcommand\printchapternum{}
+\renewcommand\printchapternonum{\chapternonumtrue}
+\renewcommand\chaptitlefont{\fontfamily{cmr}\fontseries{db}
+\fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
+\renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}
+\fontsize{0.7in}{0in}\selectfont\color{numbercolor}}
+\renewcommand\printchaptertitle[1]{
+\noindent
+\ifchapternonum
+\begin{tabularx}{\textwidth}{X}
+{\parbox[t]{\linewidth}{\chaptitlefont ##1}
+\vphantom{\raisebox{-7pt}{\chapnumfont 1}}}
+\end{tabularx}
+\else
+\begin{tabularx}{\textwidth}{Xl}
+{\parbox[t]{\linewidth}{\chaptitlefont ##1}}
+& \raisebox{-7pt}{\chapnumfont \thechapter}
+\end{tabularx}
+\fi
+\par\vskip1mm\hrule}}
+\chapterstyle{jenor}
+
+\renewcommand\cftappendixname{\appendixname~}
+\setlength{\marginparwidth}{2.2cm}
+\openany
+
+\settocdepth{section}
+\setsecnumdepth{subsection}
+
+
+\begin{document}
+\setlength{\parindent}{0em}
+
+\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+\begin{titlingpage}
+
+\mainmatter 
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 				
+\center 
+\textsc{\Large Delft University of Technology}\\[0.5cm]
+\textsc{\Large Faculty of Aerospace Engineering}\\[0.2cm]
+% \textsc{\Large AE3212-II}\\[0.2cm]
+\textsc{\large 
+Rotor / wake Aerodynamics - AE4135 }\\[1cm] 							
+\HRule \\[0.5cm]
+{ \huge \bfseries 
+Rotor / wake Aerodynamics \\ \large{\emph{Assignment 1: Blade Element Theory}} }\\[0.2cm]
+%{ \Large }\\[0.2cm]
+\HRule \\[0.5cm]
+\large
+Instructor: Prof. Dr.ir. C.J. Simao Ferreira \\
+Julian Gonzalez, 6281486 \\
+Stijn Hersbach, 4857054 \\
+Pim Haanen, 5092795 \\
+\large{\large \today}\\
+\vspace{5pt}
+\HRule \\[0.5cm]
+\vspace{5pt}
+
+
+
+
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=0.15\textwidth]{Figures/tu_delft_logo_jpg.png}
+\end{figure}
+\end{titlingpage}
+\pagestyle{ruled}
+
+\large
+% \frontmatter
+
+% \input{Chapters/Summary}
+% \newpage
+
+\begin{KeepFromToc}
+    \tableofcontents
+\end{KeepFromToc}
+
+% \newpage
+% \listoftables
+% \newpage
+% \listoffigures
+% \newpage
+% \input{Chapters/Lists}
+% \newpage
+\setcounter{page}{2}
+
+\input{Chapters/Nomenclature}
+\input{Chapters/Introduction}
+\input{Chapters/Procedure}
+\input{Chapters/Results}
+\input{Chapters/Conclusion}
+\input{Appendices/App_Python code}
+\printbibliography[heading=bibintoc,title=References]
+
+
+\end{document}
+
